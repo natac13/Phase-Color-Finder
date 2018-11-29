@@ -5,17 +5,18 @@ $title-font: 'Bevan', cursive;
 
 $contrast: #303036;
 $text: #333;
-$primary-color: #EEE4CA;
-$secondary-color: #6DB193;
-$third-color: #295F4E;
-$forth-color: #323232;
-
+$primary-color: #45CB85;
+$secondary-color: #57E2E5;
+$third-color: #006E90;
+$forth-color: #153131;
+$accent-color: #F18F01;
+$accent-dark: #6E4101;
 $offWhite: #F8F8F8;
 
 .common-btn {
   font-family: $roboto;
-  background-color: $forth-color !important;
-  color: black;
+  background-color: $third-color !important;
+  color: $offWhite;
   font-size: 1.4em;
   letter-spacing: .12em;
   font-weight: bold;
@@ -29,14 +30,20 @@ $offWhite: #F8F8F8;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  border-color: $forth-color;
+  border-color: $third-color;
   border-radius: 5px;
   text-shadow:
-    1px 1px 0px $offWhite,
-    // -1px -1px 0 $offWhite,
-    0 0 .9em $offWhite,
-
-    0 0 .2em $offWhite;
+    1px 1px 0px $accent-dark,
+    -1px -1px 0 $accent-dark,
+    0 0 .9em $accent-dark,
+    0 0 .5em $accent-dark,
+    0 0 .2em $accent-dark;
+  box-shadow:
+    1px 1px 0px $accent-dark,
+    -1px -1px 0 $accent-dark,
+    0 0 1.2em $accent-dark,
+    0 0 .5em $accent-dark,
+    0 0 .2em $accent-dark;
 
   &:before {
     content: "";
@@ -47,7 +54,7 @@ $offWhite: #F8F8F8;
     left: 0;
     right: 0;
     bottom: 0;
-    background: $third-color;
+    background: $accent-color;
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition-property: transform;
@@ -61,20 +68,20 @@ $offWhite: #F8F8F8;
   &:hover,
   &:focus,
   &:active {
-    border-color: $forth-color;
-    color: $offWhite;
+    border-color: $third-color;
+    color: $text;
     text-shadow:
-      1px 1px 0px $primary-color,
-      -1px -1px 0 $primary-color,
-      0 0 1.2em $primary-color,
-      0 0 .5em $primary-color,
-      0 0 .2em $primary-color;
+      1px 1px 0px $secondary-color,
+      -1px -1px 0 $secondary-color,
+      0 0 1.2em $secondary-color,
+      0 0 .5em $secondary-color,
+      0 0 .2em $secondary-color;
     box-shadow:
-      1px 1px 0px $primary-color,
-      -1px -1px 0 $primary-color,
-      0 0 1.2em $primary-color,
-      0 0 .5em $primary-color,
-      0 0 .2em $primary-color;
+      1px 1px 0px $secondary-color,
+      -1px -1px 0 $secondary-color,
+      0 0 1.2em $secondary-color,
+      0 0 .5em $secondary-color,
+      0 0 .2em $secondary-color;
   }
 
   &:hover:before,

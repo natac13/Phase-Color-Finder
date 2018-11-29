@@ -7,22 +7,21 @@ import FormDisplay from './FormDisplay';
 
 
 
-class LightSpacingForm extends Component {
+class CircuitNumberForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      circuitNumber: undefined,
+      phaseColor: undefined,
     };
 
-
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(values, actions) {
     // const {
     //
     // } = values;
-
-
 
     setTimeout(() => {
       console.log(JSON.stringify(values, null, 2));
@@ -31,10 +30,14 @@ class LightSpacingForm extends Component {
   }
 
   render() {
+    const { circuitNumber, phaseColor } = this.state;
+
     return (
       <div>
         <Formik
-          initialValues={}
+          initialValues={
+            { circuitNumber }
+          }
           onSubmit={this.handleSubmit}
           render={props => (
             <React.Fragment>
@@ -48,7 +51,7 @@ class LightSpacingForm extends Component {
   }
 }
 
-export default LightSpacingForm;
+export default CircuitNumberForm;
 
 
 // validationSchema={yup.object({
