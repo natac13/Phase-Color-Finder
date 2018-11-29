@@ -11,7 +11,7 @@ class CircuitNumberForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      circuitNumber: undefined,
+      circuitNumber: '',
       phaseColor: undefined,
     };
 
@@ -19,14 +19,42 @@ class CircuitNumberForm extends Component {
   }
 
   handleSubmit(values, actions) {
-    // const {
-    //
-    // } = values;
+    const { circuitNumber } = values;
+
+    /* Logic for finding phase color */
+    // remainders:
+    // 1, 2 = RED
+    // 3, 4 = BLACK
+    // 5, 0 = BLUE
+    const colorMatcher = (remainder) => {
+      switch (remainder) {
+        case 1:
+        case 2:
+          return 'RED';
+        case 3:
+        case 4:
+          return 'BLACK';
+        case 5:
+        case 0:
+          return 'BLUE';
+        default:
+          return null;
+      }
+    };
+    const remainder = circuitNumber % 6;
+    const color = colorMatcher(remainder);
 
     setTimeout(() => {
+      console.log('Remainder', remainder);
+      console.log('color', color);
+      this.setState(prevState => ({
+        ...prevState,
+        phaseColor: color,
+        circuitNumber,
+      }));
       console.log(JSON.stringify(values, null, 2));
       actions.setSubmitting(false);
-    }, 1000);
+    }, 700);
   }
 
   render() {
@@ -42,7 +70,7 @@ class CircuitNumberForm extends Component {
           render={props => (
             <React.Fragment>
               <FormDisplay {...props} />
-              <Display {...props.values} />
+              <Display phaseColor={phaseColor} circuitNumber={circuitNumber} />
             </React.Fragment>
           )}
         />

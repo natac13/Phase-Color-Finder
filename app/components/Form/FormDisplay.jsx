@@ -39,6 +39,7 @@ const FormDisplay = ({
         <FormInput
           name="circuitNumber"
           type="number"
+          required
         />
       </section>
 

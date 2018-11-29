@@ -4,24 +4,33 @@ import PropTypes from 'prop-types';
 
 import style from './style.scss';
 
-function Display({ color }) {
-
-
+function Display({ phaseColor, circuitNumber }) {
   return (
-    <section className={style.container}>
-      <div className={style.answer}>
-        {color}
-      </div>
-    </section>
+    <React.Fragment>
+      {phaseColor && (
+        <section className={style.container}>
+          <div className={style.circuit}>
+            {`Circuit # ${circuitNumber}`}
+          </div>
+          <div className={style.phaseColor}>
+            {phaseColor}
+            </div>
+        </section>)}
+    </React.Fragment>
   );
 }
 
 Display.propTypes = {
-  color: PropTypes.string,
+  phaseColor: PropTypes.string,
+  circuitNumber: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
 };
 
 Display.defaultProps = {
-  color: undefined,
+  phaseColor: undefined,
+  circuitNumber: undefined,
 };
 
 export default Display;
