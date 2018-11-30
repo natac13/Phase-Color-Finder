@@ -1,5 +1,7 @@
 # Phase-Color-Finder
 
+[Live Preview](https://natac13.github.io/Phase-Color-Finder/)
+
 A way to find the phase color of a 3-phase electrical system when you know the
 circuit number.
 
