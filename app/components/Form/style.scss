@@ -1,39 +1,37 @@
 .form {
-  width: 62vw;
-  min-height: 46vh;
+  width: 80vw;
+  min-height: 32vh;
   background: $forth-color;
   border-radius: 6px;
   color: $offWhite;
-  padding: 0.5em 1.3em;
+  padding: 0.2em 1.3em;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: min-content minmax(max-content, auto) .15em;
+  grid-auto-rows: min-content minmax(max-content, auto);
   margin: auto;
   margin-bottom: 2em;
   justify-content: center;
   align-items: center;
-  grid-gap: 5px;
+  grid-gap: 3px;
   grid-template-areas:
     "t t t t t t t t t t t t"
     ". . ia ia ia ia ia ia ia ia . ."
     ". . ia ia ia ia ia ia ia ia . ."
     ". . . sc sc sc sc sc sc . . ."
-    ". . . . . . . . . . . ."
 }
 
 .title {
   grid-area: t;
   justify-self: center;
   font-size: $font-size-big;
-  font-family: $title-font;
+  font-family: $font-family-title;
 }
 
 .controls {
   grid-area: sc;
   display: flex;
   flex-flow: column;
-  height: 100%;
-  padding-bottom: .9em;
+  height: 70%;
   padding-left: 3em;
   padding-right: 3em;
   align-items: stretch;
@@ -45,6 +43,7 @@
     flex-flow: row;
     padding-right: 1em;
     height: 100%;
+    width: 100%;
 
   }
 }
@@ -56,4 +55,23 @@
 
 .input-area {
   grid-area: ia;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  div {
+    width: 70%;
+
+    input {
+      font-weight: bold;
+      font-size: 2em;
+      height: auto;
+      text-align: center;
+      color: #333;
+      letter-spacing: 2px;
+      text-shadow:
+        -1px -1px 0 $accent-dark,
+        0 0 .13em $accent-dark;
+    }
+  }
 }

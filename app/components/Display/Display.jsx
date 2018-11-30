@@ -1,14 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
+import toLower from 'lodash/toLower';
 
 import style from './style.scss';
 
 function Display({ phaseColor, circuitNumber }) {
+  const containerClass = classnames({
+    [`${style.container}`]: true,
+    [`${style[toLower(phaseColor)]}`]: phaseColor,
+  })
   return (
     <React.Fragment>
       {phaseColor && (
-        <section className={style.container}>
+        <section className={containerClass}>
           <div className={style.circuit}>
             {`Circuit # ${circuitNumber}`}
           </div>
