@@ -32,7 +32,7 @@ const prodConfiguration = (env) => {
         ],
       },
       output: {
-        publicPath: '/Lighting-Spacing/', // where the generated static files reside. This is the project name for gh-pages
+        publicPath: '/Phase-Color-Finder/', // where the generated static files reside. This is the project name for gh-pages
       },
       devtool: 'source-map',
       plugins: [
