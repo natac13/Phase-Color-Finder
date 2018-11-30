@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: max-content;
+  margin: auto;
+  flex-flow: column;
+  width: 32vw;
+  height: 18vh;
+  border-radius: 18%;
+  padding: .32em 0;
+  color: #000;
+  font-family: $font-family-display;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow:
+    -1px -1px 0 $offWhite,
+    0 0 .6em $offWhite,
+    0 0 .3em $offWhite;
+
+  &.red {
+    background-color: #8C0000;
+    box-shadow:
+      0 0 27px 3px #D10000,
+      0 0 54px 6px #FF0000,
+      0 0 72px 9px #FF7373;
+  }
+
+  &.black {
+    background-color: #090705;
+    box-shadow:
+      0 0 27px 3px #0E0A07,
+      0 0 54px 6px #100C08,
+      0 0 72px 9px #666461;
+    color: $offWhite;
+    text-shadow:
+      -1px -1px 0 $third-color,
+      0 0 .6em $third-color,
+      0 0 .3em $third-color;
+  }
+
+  &.blue {
+    background-color: #00008C;
+    box-shadow:
+      0 0 27px 3px #0000D1,
+      0 0 54px 6px #0000FF,
+      0 0 72px 9px #7373FF;
+  }
+}
+
+.circuit {
+  font-weight: bold;
+}
+
+.phase-color {
+  font-size: $font-size-big;
+}
