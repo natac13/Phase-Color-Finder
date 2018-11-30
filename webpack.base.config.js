@@ -84,12 +84,10 @@ module.exports = (env) => {
         new CleanWebpackPlugin(['build']),
         new CopyWebpackPlugin([
           { from: 'app/static' },
-          { from: './favicon.ico' },
         ]), // copys assets, like photos to the output folder.
         new HtmlWebpackPlugin({
           template: './app/index.html',
           filename: './index.html',
-          favicon: './favicon.ico'
         }),
         // new FaviconsWebpackPlugin('./favicon.ico'),
         new webpack.DefinePlugin({
